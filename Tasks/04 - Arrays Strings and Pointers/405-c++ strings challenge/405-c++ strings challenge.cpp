@@ -23,7 +23,7 @@ int main()
     cout << "Title number is ";
     for (unsigned int i = 45; i < 512; i++)
     {
-        if (arr[i] == '1' || arr[i] == '2' || arr[i] =='3' || arr[i] == '4' || arr[i] == '5' || arr[i] == '6' || arr[i] == '7' || arr[i] == '8' || arr[i] == '9' || arr[i] == '0')
+        if (arr[i] == '1' || arr[i] == '2' || arr[i] == '3' || arr[i] == '4' || arr[i] == '5' || arr[i] == '6' || arr[i] == '7' || arr[i] == '8' || arr[i] == '9' || arr[i] == '0')
         {
             cout << "" << arr[i];
         }
@@ -46,6 +46,13 @@ int main()
         }
     }
     cout << "The word 'the' appeared " << wordCount << " times" << endl;
-
+    int c = 0;
+    int numArray[10] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+    int newArray[10];
+    for ( int i = 0; i < (sizeof(numArray)/sizeof(numArray[0])); i++)
+    {
+        c = 9 - i;
+        newArray[i] = numArray[c];
+        cout << to_string(newArray[i]) << " " << endl;
+    }
 }
-
