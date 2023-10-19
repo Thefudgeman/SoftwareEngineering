@@ -11,7 +11,6 @@ int main()
 	updateHeight(r1, 15);
 	display(r1);
 	cout << "Number of multiplications performed: " << getCount() << endl;
-
 	// Task - uncomment this and try to build the code
 	//updateArea(r1);
 }
