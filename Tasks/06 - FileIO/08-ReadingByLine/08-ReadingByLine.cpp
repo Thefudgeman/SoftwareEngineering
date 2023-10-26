@@ -36,15 +36,26 @@ int main()
         cout << "Read in the line: " << nextLine;
 
         // LOOK! This is how you "append" a string
-        allLines = allLines + nextLine + "\n";      //Add the newline character on the end
+       allLines = allLines + nextLine + "\n";      //Add the newline character on the end
 
     } else {
         cout << "Failed to read a line." << endl;
     }
 
-    if (inputStream.eof()) {
-        cout << "The last read found an EOF marker" << endl;
+    while (inputStream.eof() == false)
+    {
+        getline(inputStream, nextLine);
+        if (inputStream.fail() == false) {
+
+            // LOOK! This is how you "append" a string
+            allLines = allLines + nextLine + "\n";      //Add the newline character on the end
+
+        }
     }
+
+
+
+    inputStream.close();
 
     // Use a loop to read all remaining lines
     // Hint - `inputStream.eof()` to check if the end of file character was read

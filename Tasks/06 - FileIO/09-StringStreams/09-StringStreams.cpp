@@ -10,18 +10,30 @@ int main()
 {
     //Create two strings.
     string nextWord;
-
+    int i = 0;
     //Note how a long string can be broken over several lines to aid writing. Note the \ character never features in the string.
     string sentence = "May the force be with you. " \
                       "Always. Ok, maybe that's asking too much. " \
                       "How about 3 days-a-week with time off for birthdays?";
 
     //Write the complete string to the the terminal
-    cout << sentence << endl;
-
     //Read first word (words are separated by spaces or newlines)
     istringstream iss(sentence);
-    iss >> nextWord;
+    while (iss.fail() == false)
+    {
+        iss >> nextWord;
+        if (iss.fail() == false)
+        {
+            cout << nextWord << endl;
+            if (nextWord == "Always.")
+            {
+                cout << endl;
+            }
+            i++;
+        }
+    }
+
+    cout << "Total number of words" << i << endl;
 
     //Was a word actually read?
     if (iss.fail()) {
